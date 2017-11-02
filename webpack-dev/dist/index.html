@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/kirui.css">
+        <script type="text/javascript" src="js/kirui.js" charset="utf-8"></script>
+        <script src="http://localhost:35729/livereload.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <a href="#" class="btn btn-secondary" id="menu-toggle" style="float: left; color: black;">
+                <i class="material-icons md-24" stlye="font-weight: bold;">menu</i>
+            </a>
+            <a class="navbar-brand" href="#" style="float: left;">Drescher DocuFlow</a>
+        </div>
+
+
+        <div id="content-wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav main-menu">
+                    <li>
+                        <a href="#">
+                            <i class="material-icons" style="vertical-align: middle;">build</i>
+                            <span class="label">Gyártáss</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="content-wrapper">
+                <div class="container-fluid">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+    </body>
+</html>
+

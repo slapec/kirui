@@ -1,0 +1,4 @@
+/node_modules/
+.webassets-cache
+.idea
+.python-version
