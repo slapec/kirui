@@ -1,11 +1,22 @@
+# coding: utf-8
+
+from pathlib import Path
+
 import sass
-from django.http import HttpResponse
+from django.conf import settings
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 
 
-def kirui_css(request):
-    css = sass.compile(filename='/home/lovasb/WORK/kirui/components/bundle.scss')
-    return HttpResponse(css)
+def compile_sass(request, path):
+    filename = Path(settings.PROJECT_DIR, 'components', path).with_suffix('.scss')
+    try:
+        filename.resolve()
+    except FileNotFoundError:
+        raise Http404
+    else:
+        css = sass.compile(filename=str(filename))
+        return HttpResponse(css)
 
 
 def index(request):
