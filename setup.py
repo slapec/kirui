@@ -7,10 +7,8 @@ from distutils.util import convert_path
 from fnmatch import fnmatchcase
 from setuptools import setup, find_packages
 
-from bundle import bundle
 
-
-version = '1.0'
+version = '1.1'
 
 # Provided as an attribute, so you can append to these instead
 # of replicating them:
@@ -101,11 +99,15 @@ def find_package_data(
 
 
 class sdist(sdist_base):
-    sub_commands = [('bundle', lambda self: bundle())]
+    def bundle(self):
+        from bundle import bundle
+        return bundle()
+
+    sub_commands = [('bundle', bundle)]
 
 
 setup(
-    name='Kirui',
+    name='kirui',
     version=version,
     packages=find_packages(),
     package_data=find_package_data('kirui', only_in_packages=False),
