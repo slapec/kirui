@@ -70,7 +70,7 @@ env.register('kirui_js', Bundle(
 
 env.register('kirui_css', Bundle(
     'components/bundle.scss',
-    filters=('scss', 'cssmin'),
+    filters=('libsass', 'cssmin'),
     output=out('css/kirui.css')
 ))
 

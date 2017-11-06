@@ -2,10 +2,11 @@
 
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import call, patch, MagicMock
 
 from django.test import TestCase
 
-from utils.static import find_components
+from utils.static import find_components, BundleFinder
 
 
 class FindComponentsTests(TestCase):
@@ -36,3 +37,24 @@ class FindComponentsTests(TestCase):
                 d('1components', '3component2'),
                 d('1components', '4component1')
             ])
+
+
+class BundleFinderTests(TestCase):
+    def setUp(self):
+        self.finder = BundleFinder()
+
+    def test_list(self):
+        self.assertEqual(
+            list(self.finder.list(None)),
+            []
+        )
+
+    @patch('django.contrib.staticfiles.finders.FileSystemFinder.find')
+    def test_find(self, mock_find: MagicMock):
+        self.finder.find('/root/child/file')
+        self.finder.find('root/child/file')
+
+        self.assertEqual(mock_find.mock_calls, [
+            call('root/child/file'),
+            call('child/file')
+        ])
