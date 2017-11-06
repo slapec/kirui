@@ -5,7 +5,7 @@
   /*src: url(../font/MaterialIcons-Regular.eot);
   src: url(../font/MaterialIcons-Regular.woff2) format('woff2'),
        url(../font/MaterialIcons-Regular.woff) format('woff'),*/
-  src: url(/static/font/MaterialIcons-Regular.ttf);
+  src: url($FontPath + 'MaterialIcons-Regular.ttf');
 }
 
 .material-icons {

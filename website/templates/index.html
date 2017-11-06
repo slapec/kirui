@@ -29,25 +29,6 @@
                 <i class="material-icons md-24" stlye="font-weight: bold;">menu</i>
             </a>
             <a class="navbar-brand" href="#" style="float: left;">Drescher DocuFlow</a>
-
-            {% if user.is_authenticated %}
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        {{ user.username }} <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="{% url 'logout' %}">{% trans 'Logout' %}</a>
-                        </li>
-
-                        <li>
-                            <a href="https://docs.in.drescher.hu/manufacturing/docuflow/" target="_blank">{% trans 'Documentation' %}</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            {% endif %}
         </div>
 
         <div id="wrapper">
@@ -73,6 +54,7 @@
             <!-- Page Content -->
             <div id="content-wrapper">
                 <div class="container-fluid">
+                    Page content
                     {% block content %}{% endblock %}
                 </div>
             </div>
