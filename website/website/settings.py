@@ -83,3 +83,10 @@ STATICFILES_DIRS = find_components(
     os.path.join(PROJECT_DIR, 'vendor'),
     os.path.join(PROJECT_DIR, 'components')
 )
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'utils.static.BundleFinder'
+)

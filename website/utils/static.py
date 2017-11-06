@@ -3,6 +3,8 @@
 from pathlib import Path
 from typing import List
 
+from django.contrib.staticfiles.finders import FileSystemFinder
+
 
 def find_components(*roots: str) -> List[str]:
     components = []
@@ -15,3 +17,11 @@ def find_components(*roots: str) -> List[str]:
         components.extend(sorted(root_components))
 
     return components
+
+
+class BundleFinder(FileSystemFinder):
+    def find(self, path: str, all=False):
+        return super().find(path.split('/', 1)[1])
+
+    def list(self, ignore_patterns):
+        return []
