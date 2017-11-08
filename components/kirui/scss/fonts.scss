@@ -1,56 +1,56 @@
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
     src: url($FontPath + "OpenSans-Regular.ttf");
 }
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
     src: url($FontPath + "OpenSans-SemiBold.ttf");
 }
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: bold;
+	font-weight: 700;
 	font-style: italic;
     src: url($FontPath + "OpenSans-BoldItalic.ttf");
 }
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: bolder;
+	font-weight: 900;
 	font-style: normal;
     src: url($FontPath + "OpenSans-ExtraBold.ttf");
 }
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: bolder;
+	font-weight: 900;
 	font-style: italic;
     src: url($FontPath + "OpenSans-ExtraBoldItalic.ttf");
 }
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: normal;
+	font-weight: 400;
 	font-style: italic;
     src: url($FontPath + "OpenSans-Italic.ttf");
 }
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: lighter;
+	font-weight: 200;
 	font-style: normal;
     src: url($FontPath + "OpenSans-Light.ttf");
 }
 
 @font-face {
 	font-family: 'OpenSans';
-	font-weight: lighter;
+	font-weight: 200;
 	font-style: italic;
     src: url($FontPath + "OpenSans-LightItalic.ttf");
 }
