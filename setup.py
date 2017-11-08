@@ -8,7 +8,7 @@ from fnmatch import fnmatchcase
 from setuptools import setup, find_packages
 
 
-version = '1.1'
+version = '1.2'
 
 # Provided as an attribute, so you can append to these instead
 # of replicating them:
