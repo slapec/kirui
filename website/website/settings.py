@@ -1,4 +1,7 @@
+# coding: utf-8
+
 import os
+from utils.static import find_components
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = os.path.dirname(BASE_DIR)
@@ -76,10 +79,14 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "components/kirui"),
-    os.path.join(PROJECT_DIR, "components/bootstrap"),
-    os.path.join(PROJECT_DIR, "components/material-design-icons"),
-    os.path.join(PROJECT_DIR, "components/jquery"),
-    os.path.join(PROJECT_DIR, "components/sidebar"),
-]
+STATICFILES_DIRS = find_components(
+    os.path.join(PROJECT_DIR, 'vendor'),
+    os.path.join(PROJECT_DIR, 'components')
+)
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'utils.static.BundleFinder'
+)
